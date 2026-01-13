@@ -1,11 +1,10 @@
 import tensorflow as tf
-import keras
-from keras.applications import MobileNetV2
-from keras.layers import Dense, GlobalAveragePooling2D, Dropout
-from keras.models import Model
-from keras.datasets import cifar10
-from keras.utils import to_categorical
-from keras.callbacks import EarlyStopping
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Dropout
+from tensorflow.keras.models import Model
+from tensorflow.keras.datasets import cifar10
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.callbacks import EarlyStopping
 
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 num_classes = 10
