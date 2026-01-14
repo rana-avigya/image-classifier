@@ -6,6 +6,10 @@ from tensorflow.keras.datasets import cifar10
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.callbacks import EarlyStopping
 
+from sklearn.metrics import classification_report
+import numpy as np
+
+
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 num_classes = 10
 
@@ -42,5 +46,11 @@ model.fit(
     callbacks=[callback]
 )
 
+
+preds = model.predict(x_test)
+y_pred = np.argmax(pres, axis=1)
+y_true = np.argmax(y_test, axis=1)
+
+print(classification_report(y_true, y_pred))
 model.save('image_classify.h5')
 print("model saved")
